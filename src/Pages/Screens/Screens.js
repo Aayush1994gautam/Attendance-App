@@ -50,8 +50,12 @@ export default function Screens () {
     useEffect(()=>{
         debugger;
         let screen = localStorage.getItem('screenName');
-        if(screen.length ){
+        if(screen=null ){
+           console.log(screen)
+        }else if(screen.length){
             document.getElementById(screen).classList.add("active-screen");
+        }else{
+            console.log(screen) 
         }
     },[])
    
