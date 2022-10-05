@@ -1,0 +1,167 @@
+.login-wrapper{
+   //background-image:linear-gradient(133.13deg, #0288FF 5.6%, #9305FF 96.36%);
+    width: 100%;
+    height: 800px;
+    background-image: url('./../../Assets/Images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .login-wrapper-content{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        .login-wrapper-content-left{
+            img{
+                width: 90%;
+            }
+        }
+        .login-wrapper-content-right{
+            padding: 50px 0;
+            color: #fff;
+            text-align: center;
+            width: 50%;
+            img{
+                height: 50px;
+            }
+            .right-side-content{
+                font-size: 35px;
+                font-weight: 600;
+                margin-top: 10px;
+                padding-bottom: 15px;
+
+                span{
+                    background: -webkit-linear-gradient(#FFA408, #FF06E5);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    line-height: 1.5;
+                    }
+
+            }
+            .login-inputs{
+                display: flex;
+                select{
+                    background-color: #292B4c;
+                    color: #fff;
+                    font-size: 18px;
+                    padding: 10px 10px;
+                    border-radius: 12px;
+                    // margin: 20px 0px;
+                    height: 55px;
+                    outline: none;
+                    border: none;
+                   
+                   
+                }
+                input{
+                    background-color: #292B4c;
+                    color: #fff;
+                    font-size: 18px;
+                    padding: 1px 20px;
+                    //margin: 20px 30px;
+                    width: 90%;
+                    margin-left: 20px;
+                    height: 55px;
+                    border-radius: 12px;
+                    outline: none;
+                    border: none;
+                   
+                    
+                }
+               
+            }
+            .login-submit{
+                background: linear-gradient(104.46deg, #FFA408 7.91%, #FF06E5 92.33%);
+                padding: 15px 10px;
+                width: 100%;
+                border-radius: 12px;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+                border:2px solid #fff;
+            }
+
+            .otp-input{
+                // display: flex;
+                // justify-content: center;
+                padding: 0 50px;
+                input{
+                    padding: 15px 10px;
+                    margin: 20px 0;
+                    margin-right:30px !important;
+                    width: 60px !important;
+                    height: 25px;
+                    border-radius: 12px;
+                    outline: none;
+                    border: none;
+                    background-color: #292B4c;
+                    color: #fff;
+                    font-size: 24px;
+                    text-align: center;
+                }
+            }
+        }
+
+
+    }
+   
+
+    
+}
+.otp-heading{
+    margin-bottom: 5px;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.otp-content{
+    margin: 0;
+    padding: 0;
+}
+.otp-input-root{
+    justify-content: center;
+}
+.resend-otp{
+    margin:  0;
+    padding: 15px 0;
+}
+@media (max-width:801px)  {
+    .login-wrapper{
+        height:auto;
+       
+    }
+    .login-wrapper .login-wrapper-content{
+        display: block;
+        position: initial;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .login-wrapper .login-wrapper-content .login-wrapper-content-left img{
+        width: 100%;
+    }
+    .login-wrapper .login-wrapper-content .login-wrapper-content-right{
+        width: 100%;
+    }
+    .otp-input div{
+        display: block !important;
+    }
+    
+    
+}
+
+
+.otp-input input[type=number] {
+    height: 45px;
+    width: 45px;
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid #000000;
+}
+.otp-input input[type=number]::-webkit-inner-spin-button,
+.otp-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

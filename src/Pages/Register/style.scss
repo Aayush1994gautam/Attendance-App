@@ -1,0 +1,103 @@
+.register-wrapper{
+    //background-image:linear-gradient(133.13deg, #0288FF 5.6%, #9305FF 96.36%);
+    min-height: 800px;
+     width: 100%;
+     background-image: url('./../../Assets/Images/background.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+ 
+     .register-wrapper-content{
+         display: flex;
+         justify-content: start;
+         position: absolute;
+         top: 12%;
+         left: 10%;
+         .register-wrapper-content-left{
+             img{
+                 width: 90%;
+             }
+         }
+         .register-wrapper-content-right{
+             padding: 0;
+             color: #fff;
+             text-align: center;
+             width: 50%;
+
+                img{
+                    height: 50px;
+                }
+             .right-side-content{
+                 font-size: 35px;
+                 font-weight: 600;
+                 margin-top: 10px;
+                 padding-bottom: 0;
+                 span{
+                     background: -webkit-linear-gradient(#FFA408, #FF06E5);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;
+                     line-height: 1.5;
+                     }
+ 
+             }
+             .register-inputs{
+                 input{
+                    background-color: #292B4c;
+                    color: #fff;
+                    font-size: 18px;
+                    padding: 1px 20px;
+                    //margin: 20px 30px;
+                    width: 70%;
+                    margin-left: 20px;
+                    height: 55px;
+                    border-radius: 12px;
+                    outline: none;
+                    border: none;
+                    margin-bottom: 20px;
+                     
+                 }
+                
+             }
+             .register-submit{
+                 background: linear-gradient(104.46deg, #FFA408 7.91%, #FF06E5 92.33%);
+                 padding: 15px 10px;
+                 width: 75%;
+                 border-radius: 12px;
+                 color: #fff;
+                 font-size: 18px;
+                 font-weight: 600;
+                 cursor: pointer;
+                 border:2px solid #fff;
+             }
+ 
+         }
+ 
+ 
+     }
+     
+ }
+ 
+ 
+ @media (max-width:801px)  {
+    .register-wrapper{
+        height:auto;
+       
+    }
+    .register-wrapper .register-wrapper-content{
+        display: block;
+        position: initial;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .register-wrapper .register-wrapper-content .register-wrapper-content-left img{
+        width: 100%;
+    }
+    .register-wrapper .register-wrapper-content .register-wrapper-content-right{
+        width: 100%;
+    }
+    .otp-input div{
+        display: block !important;
+    }
+    
+    
+}

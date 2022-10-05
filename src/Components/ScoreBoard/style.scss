@@ -1,0 +1,31 @@
+.score-board{
+    color: #fff;
+    padding-top: 50px;
+    .score-board-wrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .score-sec{
+        display: flex;
+        justify-content: space-between;
+        img{
+            height: 80px;
+        }
+
+        ul {
+            padding: 0 15px;
+            margin: 0;
+        li{
+            list-style: none;
+        }
+        .total-score{
+            font-size: 42px;
+            font-weight: 600;
+            text-align: left;
+        }
+        .total-event{
+            padding-top: 5px;
+        }
+    }
+    }
+}

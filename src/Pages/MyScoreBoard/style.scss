@@ -1,0 +1,189 @@
+.myscoreboard{
+    width: 100%;
+    min-height: 500px;
+    background-image: url('./../../Assets/Images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+
+    .myscoreboard-wrapper{
+        padding-top: 160px;
+        width: 80%;
+        margin: 0 auto;
+
+        .myscoreboard-heading{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-size: 52px;
+            color: #fff;
+
+            span{
+                background: -webkit-linear-gradient(#FFA408, #FF06E5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1.5;
+            }
+            
+        }
+        p{
+            text-align: center;
+            font-size: 22px;
+            color: #fff;
+            padding-top: 0;
+            margin-top: 0;
+            line-height: 1.4;
+            //padding-bottom: 20px;
+        }
+        .attandance-sec{
+            background: #131641;
+            border-radius: 14px;
+            padding: 5%;
+            margin-bottom: 50px;
+        
+        .attandance-filter{
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+
+            .top-filters {
+
+                li{
+                    list-style: none;
+                    color: #fff;
+                    display: inline;
+                    padding: 10px 20px;
+                    background: linear-gradient(133.13deg, #0288FF 5.6%, #9305FF 96.36%);
+                    border-radius: 20px;
+                    margin: 0 10px;
+                    cursor: pointer;
+
+                    img{
+                        width: 20px;
+                        padding-right: 8px;
+                        padding-top: 2px;
+                    }
+
+                }
+                li:last-child{
+                    background: transparent !important;
+                    border: 1px solid #0288FF;
+                 }
+            }
+            .gotoscreen span{
+                background: transparent !important;
+                border: 1px solid #0288FF;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin: 0 10px;
+                cursor: pointer;
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+        .attendance-txt{
+            color: #fff;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+           .attan-card{
+
+               border: 1px solid #f2f2f0;
+               padding: 10px 20px;
+               display: flex;
+               border-radius: 20px;
+               justify-content: space-around;
+               margin: 20px 0;
+
+               .lact-num{
+                background-image: url('./../../Assets/Images/Group-9.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 50px;
+                text-align: center;
+                height: 50px;
+                color: #fff;
+                margin: 20px 0;
+            
+                p{
+                font-size: 20px;
+                font-weight: 600;
+                padding-top: 10px;
+                }
+                .event-txt{
+                    font-size: 14px;
+                    background: linear-gradient(104.46deg, #FFA408 7.91%, #FF06E5 92.33%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    line-height: 1.5;
+                    padding-top: 0;
+                }
+               }
+
+               .lact-details {
+                display: flex;
+                justify-content: space-around;
+                color: #fff;   
+                img{
+                   width: 150px;
+                   border-radius: 20px;
+               }
+               h5{
+                   width: 250px;
+                   font-size: 16px;
+                   margin: 0;
+                   padding: 0;
+                   padding-left: 20px;
+                   padding-top: 5px;
+                   line-height: 1.5;
+
+                   span:last-child{
+                       opacity: 0.6;
+                   }
+               }
+            }
+            .attended-txt{
+                background: linear-gradient(180deg, #90EE90 0%, #01CED1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1.5;
+                font-size: 22px;
+                padding-top: 15px;
+                padding-right: 40px;
+
+                .attended-img{
+                    width: 20px;
+                    padding-right: 10px;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+    .score-total{
+        background-image: url('./../../Assets/Images/Group-10.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+
+        .score-total-txt{
+            background: linear-gradient(90.34deg, #FFA606 2.92%, #FF07E5 99.73%);
+            font-size: 26px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.5;
+            padding-top: 20px;
+        }
+        span{
+            background: linear-gradient(133.13deg, #0288FF 5.6%, #9305FF 96.36%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+    }
+}
+}

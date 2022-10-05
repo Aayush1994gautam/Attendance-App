@@ -1,0 +1,93 @@
+.reward-page{
+    background-color: #131641;
+    color: #fff;
+    padding: 10px 0;
+    .reward-page-wrapper{
+        width: 80%;
+        margin: 0 auto;
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+
+
+            button{
+                font-weight: 700;
+                font-size: 22px;
+                background: linear-gradient(104.46deg, #FFA408 7.91%, #FF06E5 92.33%);
+                padding: 13px 20px;
+                margin: 0 auto;
+                border: none;
+                outline: none;
+                border-radius: 12px;
+                color: #fff;
+                border: 1px solid #fff;
+                cursor: pointer;
+            }
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+            padding: 10px 0;
+
+            span{
+                background: -webkit-linear-gradient(#FFA408, #FF06E5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1.2;
+            }
+        }
+        .filters{
+
+            padding: 20px 15px;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                background-color: #131641;
+                border-radius: 28px;
+                color: #1E6FFF;
+                padding: 10px 15px;
+                cursor: pointer;
+                border: none;
+                margin-left: 10px;
+                border: 1px solid #1E6FFF;
+                .active{
+                    background: linear-gradient(133.13deg, #0288FF 5.6%, #9305FF 96.36%);
+                }
+            }
+        }
+        
+    }
+}
+@media (max-width:801px)  {
+    .reward-page .reward-page-wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .nav {
+        img{
+            height: 50px;
+        }
+    }
+    button{
+        font-weight: 700;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .reward-page .reward-page-wrapper .filters{
+        display: none;
+    }
+}
+@media (max-width:501px)  {
+    .nav {
+        img{
+            height: 35px;
+        }
+    }
+    button{
+        font-weight: 700;
+        font-size: 20px;
+        padding: 10px;
+    }
+}
