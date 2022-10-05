@@ -19,7 +19,6 @@ export default function Login(props) {
     setuserMobile(e.target.value)
   }
   const  checkValidation = async () => {
-    debugger;
     const data = JSON.stringify({"phone": userMobile});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/signup', data,{
       headers : headers
