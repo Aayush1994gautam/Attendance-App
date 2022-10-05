@@ -164,3 +164,63 @@
     }
     }
 }
+@media (max-width:801px)  {
+    .leaderboard{
+        padding: 0;
+    }
+    .leaderboard .leaderboard-wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .leaderboard .leaderboard-wrapper{
+        padding-top: 100px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-heading{
+        padding: 20px 0;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec{
+        padding: 20px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .leaderboard-filter{
+        display: none;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attendance-txt{
+        padding-left: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card{
+        display: block;
+        padding: 10px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-details{
+        display: block;
+        text-align: center;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-num{
+        margin: 0;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-num .event-txt{
+        padding: 0;
+        margin: 0;
+        font-size: 42px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-details img{
+        width: 160px;
+        padding-top: 0;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-details h5{
+        padding-top: 0;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-details h5{
+        font-size: 26px;
+    }
+    .lact-attan{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .attended-txt{
+        padding-right: 0;
+    }
+
+}

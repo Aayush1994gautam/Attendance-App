@@ -19,19 +19,24 @@ export default function Login(props) {
     setuserMobile(e.target.value)
   }
   const  checkValidation = async () => {
-    const data = JSON.stringify({"phone": userMobile});
-    const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/signup', data,{
-      headers : headers
-    })
-    console.log(response);
-    setToken(response.data.token);
-    localStorage.setItem("token", response.data.token)
+    if(userMobile.length >=9){
+        const data = JSON.stringify({"phone": userMobile});
+      const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/signup', data,{
+        headers : headers
+      })
+      //console.log(response);
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token)
 
-    let path = "/verification";
-    navigate(path,{state: {
-      mobile : userMobile
-      }
-    });
+      let path = "/verification";
+      navigate(path,{state: {
+        mobile : userMobile
+        }
+      });
+    }else{
+      console.log("nothing")
+    }
+    
   }
   useEffect(()=>{
     let login = localStorage.getItem('login');

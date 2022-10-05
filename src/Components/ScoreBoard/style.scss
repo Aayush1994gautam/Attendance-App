@@ -29,3 +29,19 @@
     }
     }
 }
+
+@media (max-width:801px)  {
+
+    .score-board .score-board-wrapper{
+        display: block !important;
+    }
+    .score-board .score-sec ul .total-score{
+        text-align: center !important ;
+    }
+    .score-board .score-sec{
+        display: block !important;
+    }
+    .score-sec{
+        padding-bottom: 30px;
+    }
+}

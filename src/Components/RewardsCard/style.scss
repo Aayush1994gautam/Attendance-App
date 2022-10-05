@@ -58,3 +58,17 @@
 .reward-card:nth-child( even ) {
     margin-top: 50px;
 }
+@media (max-width:801px)  {
+.reward-card{
+    margin: 0 auto !important;
+    margin-bottom: 40px !important;
+    min-height: 350px !important;
+    float: initial !important;
+    clear: both;
+    padding-bottom: 30px;
+}
+.reward{
+    height: auto !important;
+    padding-bottom: 50px !important;
+}
+}

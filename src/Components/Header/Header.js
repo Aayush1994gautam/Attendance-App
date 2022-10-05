@@ -16,15 +16,15 @@ export default function Header() {
   const navigate = useNavigate();
 
   const loggedOut = () => {
+    debugger;
     localStorage.removeItem('login');
     localStorage.removeItem('screen');
     localStorage.removeItem('screenName');
     localStorage.removeItem('token');
-    // let items = localStorage.getItem("item");
-    // console.log(items);
-    navigate('/');
+    navigate("/")
+    window.location.reload()
   }
-  const myFunction = () => {
+  const openNavBar = () => {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
@@ -67,10 +67,10 @@ export default function Header() {
           <Link to="/leaderboard" ><span>Leaderboard</span></Link>
           <Link to="/screens" ><span>Switch Website</span></Link>
           <Link className='btn-logout' onClick={loggedOut} >Sign out of Attandance</Link>
-          <a href="#" class="icon" >
+          <Link class="icon" >
             <img className="theme-btn" src={light} alt="dark-light" />
-            <img src={menu} onClick={myFunction} className="menu-bar" alt="menu-bar" />
-          </a>
+            <img src={menu} onClick={openNavBar} className="menu-bar" alt="menu-bar" />
+          </Link>
         </div>
     </div>
     </>

@@ -169,6 +169,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         text-align: center;
+        padding: 20px;
+        margin-top: 40px;
 
         .score-total-txt{
             background: linear-gradient(90.34deg, #FFA606 2.92%, #FF07E5 99.73%);
@@ -186,4 +188,50 @@
         }
     }
 }
+}
+@media (max-width:801px)  {
+    // .myscoreboard{
+    //     background-size: contain;
+    // }
+    .myscoreboard .myscoreboard-wrapper{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attandance-filter{
+        display: none;
+    }
+    .myscoreboard .myscoreboard-wrapper .myscoreboard-heading{
+        font-size: 42px;
+    }
+
+    .myscoreboard .myscoreboard-wrapper .attandance-sec{
+        padding-top: 20px;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attan-card{
+        display: block;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attan-card .lact-details{
+        display: block;
+        text-align: center;
+    }
+
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attan-card .lact-num{
+        margin:0 auto;
+        margin-bottom: 35px;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attan-card .attended-txt{
+        padding-right: 0;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attan-card .lact-details h5{
+        width: 100%;
+        padding-left: 0;
+        font-size: 20px;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec{
+        text-align: center;
+    }
+    .myscoreboard .myscoreboard-wrapper .attandance-sec .attendance-txt{
+        font-size: 24px;
+    }
 }

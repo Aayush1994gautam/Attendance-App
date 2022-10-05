@@ -163,46 +163,9 @@
         width: 100%;
     }
     
-    .score-board .score-board-wrapper{
-        display: block !important;
-    }
+
     .live-slider .event-card{
         width: 300px;
     }
-    .score-board .score-sec ul .total-score{
-        text-align: center !important ;
-    }
-    .score-board .score-sec{
-        display: block !important;
-    }
-    .score-sec{
-        padding-bottom: 30px;
-    }
-    // .winner-card{
-    //     width: 100% !important;
-    //     margin: 0 !important;
-    //     margin-bottom: 40px !important;
-    //     min-height: 350px !important;
-    // }
-    .reward-card{
-        width: 100% !important;
-        margin: 0 !important;
-        margin-bottom: 40px !important;
-        min-height: 350px !important;
-        float: initial !important;
-        clear: both;
-        padding-bottom: 30px;
-    }
-    .reward{
-        height: auto !important;
-        padding-bottom: 50px !important;
-    }
-    .footer ul{
-        padding: 0;
-    }
-    .footer ul li{
-        padding: 15px 20px;
-        color: #fff !important;
-        font-size: 20px !important;
-    }
+   
 }

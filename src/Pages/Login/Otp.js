@@ -21,7 +21,8 @@ export default function Otp() {
 
   
   const checkValidation = async () => {
-    const data = JSON.stringify({"token":localStorage.getItem('token'),"otp" :OTP});
+    if(OTP.length>=4){
+      const data = JSON.stringify({"token":localStorage.getItem('token'),"otp" :OTP});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/verify', data,{
       headers : headers
     })
@@ -29,6 +30,10 @@ export default function Otp() {
       localStorage.setItem('login', true);
         let path = "/screens";
         navigate(path);
+    }else{
+      console.log("nothing")
+    }
+    
   }
   const sendAgainOtp = async () =>{
     const data = JSON.stringify({"phone": location.state.mobile});

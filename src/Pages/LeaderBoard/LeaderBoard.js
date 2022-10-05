@@ -86,7 +86,8 @@ export default function LeaderBoard() {
                 <h5><span>{leaderboard.name}</span><br /><span>{leaderboard.time}</span></h5>
               </div>
               <div className='lact-attan'>
-              <p className='attended-txt'><img className='attended-img' src={leaderboard.brand} alt="attendend" />Won free {leaderboard.discount} of Zomato coupon code!</p>
+              <img className='attended-img' src={leaderboard.brand} alt="attendend" />
+              <p className='attended-txt'>Won free {leaderboard.discount} of Zomato coupon code!</p>
                 {/* <span>{leaderboard.attendance ? <p className='attended-txt'><img className='attended-img' src={attendend} alt="attendend" />Attended!</p> : <span>Not Attended!</span>}</span> */}
               </div>
             </div>
