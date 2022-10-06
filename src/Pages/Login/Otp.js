@@ -11,6 +11,7 @@ import axios from 'axios';
 
 const headers = {
     'Content-Type': 'application/json',
+    'token':localStorage.getItem('token'),
   }
 
 export default function Otp() {
@@ -22,7 +23,7 @@ export default function Otp() {
   
   const checkValidation = async () => {
     if(OTP.length>=4){
-      const data = JSON.stringify({"token":localStorage.getItem('token'),"otp" :OTP});
+      const data = JSON.stringify({"otp" :OTP});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/verify', data,{
       headers : headers
     })

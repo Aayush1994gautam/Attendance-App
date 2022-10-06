@@ -7,16 +7,53 @@ import light from '../../Assets/Images/light.png';
 import profile from '../../Assets/Images/profile-1.png';
 import menu from '../../Assets/Images/menu.svg';
 import moblogo from '../../Assets/Images/mob-logo.png';
-
-
 import NavScreens from '../NavScreens/NavScreens';
+
+// import { Navbar } from 'responsive-navbar-react'
+// import 'responsive-navbar-react/dist/index.css'
+
+// const links = {
+//   items: [
+//     {
+//       text: 'My Scoreboard',
+//       link: '/myscoreboard'
+//     },
+//     {
+//       text: 'Leaderboard',
+//       link: '/leaderboard'
+//     },
+//     {
+//       text: <img className="theme-btn"  src={light} alt="dark-light" />,
+     
+//     },
+//     {
+//       text: <img className='profle-icon' src={profile} alt="" />,
+     
+//     },
+    
+//   ],
+//   logo: {
+//     text: 'Responsive Navbar React',
+//     img:logo
+//   },
+//   style: {
+//     barStyles: {
+//       background: 'transparent',
+//     },
+//     sidebarStyles: {
+//       background: '#222',
+//       buttonColor: 'white',
+      
+//     }
+
+//   }
+// }
 
 
 export default function Header() {
   const navigate = useNavigate();
 
   const loggedOut = () => {
-    debugger;
     localStorage.removeItem('login');
     localStorage.removeItem('screen');
     localStorage.removeItem('screenName');
@@ -36,6 +73,7 @@ export default function Header() {
   }
   return (
     <>
+    {/* <Navbar {...links} /> */}
     <div className='header'>
       <div className='header-sec'>
         <div className='header-left-sec'>

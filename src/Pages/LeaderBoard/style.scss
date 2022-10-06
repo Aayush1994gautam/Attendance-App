@@ -166,6 +166,8 @@
 }
 @media (max-width:801px)  {
     .leaderboard{
+        background-image: none;
+        background-color: rgb(19, 22, 65);
         padding: 0;
     }
     .leaderboard .leaderboard-wrapper{

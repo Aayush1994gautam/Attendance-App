@@ -83,3 +83,27 @@
     }
 
 }
+@media (max-width:801px)  {
+    .screens{
+        height: 2200px;
+        background-image: none;
+        background-color: rgb(19, 22, 65);
+    }
+    .screens .screens-wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .screens .screens-wrapper p{
+        font-size: 26px;
+    }
+    .screens .screens-wrapper .all-screens{
+        display: block;
+    }
+    .screens .screens-wrapper .all-screens .screen-sec ul li img{
+        width: 200px;
+    }
+    .screens .screens-wrapper .all-screens .screen-sec ul li{
+        font-size: 34px;
+        font-weight: 700;
+    }
+}

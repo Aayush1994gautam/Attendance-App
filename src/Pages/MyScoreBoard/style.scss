@@ -190,13 +190,14 @@
 }
 }
 @media (max-width:801px)  {
-    // .myscoreboard{
-    //     background-size: contain;
-    // }
+    .myscoreboard{
+        background-image: none;
+        background-color: rgb(19, 22, 65);
+    }
     .myscoreboard .myscoreboard-wrapper{
         width: 90%;
         margin: 0 auto;
-        padding-top: 40px;
+        padding-top: 80px;
     }
     .myscoreboard .myscoreboard-wrapper .attandance-sec .attandance-filter{
         display: none;
