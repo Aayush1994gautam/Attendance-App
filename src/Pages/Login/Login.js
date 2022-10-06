@@ -30,7 +30,8 @@ export default function Login(props) {
 
       let path = "/verification";
       navigate(path,{state: {
-        mobile : userMobile
+        mobile : userMobile,
+        token:response.data.token
         }
       });
     }else{

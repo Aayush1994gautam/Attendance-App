@@ -9,17 +9,17 @@ import { useLocation } from "react-router-dom";
 import OTPInput, { ResendOTP } from "otp-input-react";
 import axios from 'axios';
 
-const headers = {
-    'Content-Type': 'application/json',
-    'token':localStorage.getItem('token'),
-  }
+
 
 export default function Otp() {
   const location = useLocation();
   const [OTP, setOTP] = useState("");
   let navigate = useNavigate(); 
 
-
+  const headers = {
+    'Content-Type': 'application/json',
+    'token':location.state.token,
+  }
   
   const checkValidation = async () => {
     if(OTP.length>=4){
@@ -37,6 +37,7 @@ export default function Otp() {
     
   }
   const sendAgainOtp = async () =>{
+    
     const data = JSON.stringify({"phone": location.state.mobile});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/signup', data,{
       headers : headers
