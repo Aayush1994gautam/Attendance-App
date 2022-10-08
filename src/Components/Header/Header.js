@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logoDark from '../../Assets/Images/logo.png';
 import logoLight from '../../Assets/Images/Group-29.png';
-
-//import useLocalStorage from 'use-local-storage';
 import './style.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import light from '../../Assets/Images/Group-25.png';
@@ -23,6 +21,8 @@ export default function Header() {
   const [lightTheme, setLightTheme] = useState(false);
   const dispach = useDispatch();
   const getTheme = useSelector((state) => state.allState.theme);
+
+
   const updateTheme = () => {
     if(getTheme === "Light"){
       dispach(setTheme("Dark"));
@@ -59,18 +59,34 @@ export default function Header() {
       x.style.removeProperty("background");
     }
   }
+  const redirectPage = e => {
+   
+    let links = document.getElementsByClassName(" activeLink");
+    if(links.length >0){
+      links[0].classList.remove("activeLink");
+    }
+   let ele = document.getElementById(e.target.id);
+    ele.className += " activeLink";
+  }
+  const checkActiveLink = () => {
+    let links = document.getElementsByClassName(" activeLink");
+    if(links.length >0){
+      links[0].classList.remove("activeLink");
+    }else{
+      console.log("")
+    }
+  }
   return (
     <>
-    {/* <Navbar {...links} /> */}
     <div className='header'>
       <div className='header-sec'>
         <div className='header-left-sec'>
-          <Link to="/dashboard" ><img src={lightTheme?logoLight:logoDark } alt="logo" /></Link>
+          <Link to="/dashboard" ><img onClick={checkActiveLink}src={lightTheme?logoLight:logoDark } alt="logo" /></Link>
         </div>
         <div className='header-right-sec'>
-          <div className={lightTheme ? "nav-link-light" :"nav-link-dark" }>
-              <Link to="/myscoreboard"><span>My Scoreboard</span></Link>
-            <Link to="/leaderboard" ><span>Leaderboard</span></Link>
+          <div id="links" className={lightTheme ? "nav-link-light" :"nav-link-dark" }>
+              <Link to="/myscoreboard"><span id="myscoreboard" onClick={e => redirectPage(e)}>My Scoreboard</span></Link>
+              <Link to="/leaderboard"><span id="leaderboard"   onClick={e => redirectPage(e)}>Leaderboard</span></Link>
           </div>
         
           <ul className='img-tabs'>

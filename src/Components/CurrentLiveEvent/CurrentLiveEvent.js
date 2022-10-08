@@ -63,7 +63,7 @@ export default function CurrentLiveEvent() {
                 <img className='current-liv-img' src={icon3} alt="current-live-icon" />
                 <div className='live-video'>
                     <img src={liveVideo} alt="currentVideo" />
-                    <p className='live-video-text'>Mark your attendace for current<br /> live event... </p>
+                    <p className='live-video-text'>Mark your attendace for <span>{localStorage.getItem('screenName')}</span> live event... </p>
                 </div>
                 <div className='live-attandance'>
                     <img className='calender-img' src={calendar} alt="Calenderlogo" />

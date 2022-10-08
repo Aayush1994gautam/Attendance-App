@@ -226,3 +226,10 @@
  }
  
 } 
+
+.activeLink{
+  background: -webkit-linear-gradient(#FFA408, #FF06E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.5;
+}
