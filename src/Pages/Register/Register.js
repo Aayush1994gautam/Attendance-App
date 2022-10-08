@@ -4,12 +4,13 @@ import img from "../../Assets/Images/Saly-10.png";
 import logo from "../../Assets/Images/logo.png";
 import { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
+import axios from 'axios';
 
 
 export default function Register(props) {
 
   const[userName, setuserName] = useState("");
-  const[userMobile, setuserMobile] = useState("");
+  const[userDOB, setuserDOB] = useState("");
   const[userEmail, setuserEmail] = useState("");
 
   let navigate = useNavigate(); 
@@ -17,15 +18,38 @@ export default function Register(props) {
   const nameChange = (e) =>{
     setuserName(e.target.value)
   }
-  const updateNumber = (e) =>{
-    setuserMobile(e.target.value)
+  const updateDOB = (e) =>{
+    setuserDOB(e.target.value)
   }
   const updateEmail = (e) =>{
     setuserEmail(e.target.value)
   }
-  const checkValidation = () => {
-    let path = "/verification";
-    navigate(path,{state:{mobile:userMobile}});
+  const headers = {
+    'token': localStorage.getItem('token'),
+    "Content-Type": "application/json",
+  }
+
+  const checkValidation = async () => {
+    if(true){
+      const data = JSON.stringify({'email':"ayush@gmail.com", "dob" :"2022-09-22T00:00:00.000", });
+      const response = await fetch('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/student', data,{
+        headers : headers
+      })
+       localStorage.setItem("token",response.data.token);
+        localStorage.setItem('login', true);
+        if(response.data.student.email){
+          let path = "/screens";
+          navigate(path);
+        }else{
+          navigate("/register");
+        }
+         
+      }else{
+        console.log("nothing")
+      }
+
+    let path = "/screen";
+    navigate(path);
   }
 
 
@@ -40,11 +64,11 @@ export default function Register(props) {
 
           <p className='right-side-content'>Register to your account and <br />get amazing <span>reward!!</span></p>
           <div className='register-inputs'>
-            <input type="text" placeholder="Enter your name" onChange={nameChange} />
-            <input type="number" placeholder="Mobile Number" onChange={updateNumber}></input>
+            <input type="text" placeholder="Enter Your FullName" onChange={nameChange} />
+            <input type="date" placeholder="DOB" onChange={updateDOB}></input>
             <input type="text" placeholder="Email" onChange={updateEmail}></input>
         </div>
-            <p className='links-cta'><Link to={"/login"}>Have account already?</Link></p>
+            {/* <p className='links-cta'><Link to={"/login"}>Have account already?</Link></p> */}
             <button className='register-submit' onClick={checkValidation}>Register</button>
         </div>
     </div>

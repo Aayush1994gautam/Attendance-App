@@ -1,10 +1,12 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './style.scss';
 import { Link } from 'react-router-dom';
 import Calendar from '../../Assets/Images/Group-7.png';
 import matchers from '@testing-library/jest-dom/matchers';
 import lacImage from '../../Assets/Images/liveimg.png';
 import attendend from '../../Assets/Images/Group-8.png';
+import { useSelector} from 'react-redux';
+
 const totalLactures = [
   {
     "event": "01",
@@ -49,8 +51,16 @@ const totalLactures = [
 
 ]
 export default function ScoreBoard() {
+  const [theme, setTheme] = useState(useSelector((state) => state.allState.theme));
+  const reState = useSelector((state) => state.allState.theme);
+  
+
+ useEffect(()=>{
+   setTheme(reState);
+ },);
+
   return (
-    <div className='myscoreboard'>
+    <div className={theme === "Light" ? "myscoreboard dark-myscoreboard" : "myscoreboard light-myscoreboard"}>
       <div className='myscoreboard-wrapper'>
         <h2 className='myscoreboard-heading'>Your Scoreboard for <span>Instacart</span></h2>
         <p>Get amazing surprises for each attended event. Get ready <br />to give fully presence!! </p>

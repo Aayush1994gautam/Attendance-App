@@ -15,6 +15,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            padding-bottom: 20px;
             font-size: 52px;
             color: #fff;
 
@@ -226,3 +227,12 @@
     }
 
 }
+.light-leaderboard{
+    background-image: none;
+    background-color: #fff !important;
+
+    .leaderboard-heading{
+        color: #000 !important;
+    }
+}
+

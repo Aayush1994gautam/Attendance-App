@@ -236,3 +236,15 @@
         font-size: 24px;
     }
 }
+
+.light-myscoreboard{
+    background-color: #fff !important;
+    background-image: none;
+    .myscoreboard-wrapper p{
+        color: #000 !important;
+        
+    }
+    .myscoreboard-heading{
+        color: #000 !important;
+    }
+}

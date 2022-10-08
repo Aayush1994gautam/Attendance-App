@@ -9,7 +9,7 @@
  
      .register-wrapper-content{
          display: flex;
-         justify-content: start;
+         justify-content: space-around;
          position: absolute;
          top: 12%;
          left: 10%;
@@ -48,7 +48,7 @@
                     padding: 1px 20px;
                     //margin: 20px 30px;
                     width: 70%;
-                    margin-left: 20px;
+                    //margin-left: 20px;
                     height: 55px;
                     border-radius: 12px;
                     outline: none;
@@ -61,13 +61,14 @@
              .register-submit{
                  background: linear-gradient(104.46deg, #FFA408 7.91%, #FF06E5 92.33%);
                  padding: 15px 10px;
-                 width: 75%;
+                 width: 78%;
                  border-radius: 12px;
                  color: #fff;
                  font-size: 18px;
                  font-weight: 600;
                  cursor: pointer;
                  border:2px solid #fff;
+                 //margin-left: 5px;
              }
  
          }

@@ -65,7 +65,6 @@ export default function Winners() {
     const [newwinners, setNewWinners] = useState([]);
     
     useEffect(() => {
-        //debugger;
         const headers = {
             'Content-Type': 'application/json',
         };
@@ -75,7 +74,7 @@ export default function Winners() {
         );
     },[]);
   return (
-    <div className='winners'>
+    <>
         {
           winners.length &&  winners.map((winner)=> {
                 return(
@@ -90,6 +89,6 @@ export default function Winners() {
             })
         }
        
-    </div>
+    </>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './style.scss';
 import { Link } from 'react-router-dom';
 import Calendar from '../../Assets/Images/Group-7.png';
@@ -9,7 +9,7 @@ import profile3 from '../../Assets/Images/Group-14.png';
 import brand1 from '../../Assets/Images/Zomato.png';
 import brand2 from '../../Assets/Images/Amazon.png';
 import brand3 from '../../Assets/Images/Noise.png';
-
+import { useSelector} from 'react-redux';
 
 
 
@@ -59,8 +59,16 @@ const leadersboard = [
 ]
 
 export default function LeaderBoard() {
+ 
+  const [theme, setTheme] = useState(useSelector((state) => state.allState.theme));
+  const reState = useSelector((state) => state.allState.theme);
+  
+
+ useEffect(()=>{
+   setTheme(reState);
+ },);
   return (
-    <div className='leaderboard'>
+    <div className={theme === "Light" ? "leaderboard dark-leaderboard" : "leaderboard light-leaderboard"}>
         <div className='leaderboard-wrapper'>
             <h2 className='leaderboard-heading'>Top attenders who have earned<br /> amazing<span> rewards!</span></h2>
         

@@ -18,19 +18,28 @@ export default function Otp() {
 
   const headers = {
     'Content-Type': 'application/json',
-    'token':location.state.token,
+    
   }
   
   const checkValidation = async () => {
     if(OTP.length>=4){
-      const data = JSON.stringify({"otp" :OTP});
+    const data = JSON.stringify({'token':location.state.token, "otp" :OTP});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/verify', data,{
       headers : headers
     })
      localStorage.setItem("token",response.data.token);
       localStorage.setItem('login', true);
+      if(response.data.student.email){
         let path = "/screens";
         navigate(path);
+      }else{
+        navigate("/register",{
+          state : {
+            token : response.data.token
+          }
+        });
+      }
+       
     }else{
       console.log("nothing")
     }
@@ -63,7 +72,6 @@ export default function Otp() {
         <div className="login-wrapper-content-right">
           <img src={logo} alt="logo" />
           <p className='otp-heading'>Verify Your Account</p>
-          {/* {location.state.mobile = " " ? location.state.mobile : "0000000000"} */}
           <h3 className='otp-content'>We have sent a 4 digit verification code to <br />+ {location.state.mobile = " " ? location.state.mobile : "0000000000"}</h3>
           
            <div className='otp-input'>

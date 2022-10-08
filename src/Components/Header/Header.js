@@ -1,73 +1,61 @@
-import React, { useState } from 'react'
-import logo from '../../Assets/Images/logo.png';
+import React, { useEffect, useState } from 'react'
+import logoDark from '../../Assets/Images/logo.png';
+import logoLight from '../../Assets/Images/Group-29.png';
+
 //import useLocalStorage from 'use-local-storage';
 import './style.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import light from '../../Assets/Images/light.png';
-import profile from '../../Assets/Images/profile-1.png';
-import menu from '../../Assets/Images/menu.svg';
+import light from '../../Assets/Images/Group-25.png';
+import dark from '../../Assets/Images/Group-27.png';
+import profileLight from '../../Assets/Images/profile-1.png';
+import profileDark from '../../Assets/Images/Group-28.png';
+import menulight from '../../Assets/Images/Group-26.png';
+import menudark from '../../Assets/Images/menu.svg';
 import moblogo from '../../Assets/Images/mob-logo.png';
 import NavScreens from '../NavScreens/NavScreens';
+import { useDispatch,useSelector } from 'react-redux';
+import {setTheme} from '../../Services/Actions/Action';
 
-// import { Navbar } from 'responsive-navbar-react'
-// import 'responsive-navbar-react/dist/index.css'
-
-// const links = {
-//   items: [
-//     {
-//       text: 'My Scoreboard',
-//       link: '/myscoreboard'
-//     },
-//     {
-//       text: 'Leaderboard',
-//       link: '/leaderboard'
-//     },
-//     {
-//       text: <img className="theme-btn"  src={light} alt="dark-light" />,
-     
-//     },
-//     {
-//       text: <img className='profle-icon' src={profile} alt="" />,
-     
-//     },
-    
-//   ],
-//   logo: {
-//     text: 'Responsive Navbar React',
-//     img:logo
-//   },
-//   style: {
-//     barStyles: {
-//       background: 'transparent',
-//     },
-//     sidebarStyles: {
-//       background: '#222',
-//       buttonColor: 'white',
-      
-//     }
-
-//   }
-// }
 
 
 export default function Header() {
   const navigate = useNavigate();
+  const [lightTheme, setLightTheme] = useState(false);
+  const dispach = useDispatch();
+  const getTheme = useSelector((state) => state.allState.theme);
+  const updateTheme = () => {
+    if(getTheme === "Light"){
+      dispach(setTheme("Dark"));
+    }else{
+      dispach(setTheme("Light"));
+    }
+    setLightTheme(!lightTheme);
+    localStorage.setItem('themeName', lightTheme ? "Dark": "Light");
+  }
+
 
   const loggedOut = () => {
     localStorage.removeItem('login');
     localStorage.removeItem('screen');
     localStorage.removeItem('screenName');
     localStorage.removeItem('token');
+    closePopus();
     navigate("/")
     window.location.reload()
   }
-  const openNavBar = () => {
+  const closePopus = ()=>{
     var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-      x.style.background = "#131641";
+    x.className = "topnav";
+    x.style.removeProperty("background");
+  }
+  const openNavBar = () => {
+    debugger;
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav light-topnav" || x.className === "topnav dark-topnav"  ) {
+      x.className += lightTheme ? " responsive light-res":" responsive dark-res";
+      //x.style.background = "#fff";
     } else {
-      x.className = "topnav";
+      x.className = lightTheme ? "topnav light-topnav" : "topnav light-topnav" ;
       x.style.removeProperty("background");
     }
   }
@@ -77,19 +65,19 @@ export default function Header() {
     <div className='header'>
       <div className='header-sec'>
         <div className='header-left-sec'>
-          <Link to="/dashboard" ><img src={logo} alt="logo" /></Link>
+          <Link to="/dashboard" ><img src={lightTheme?logoLight:logoDark } alt="logo" /></Link>
         </div>
         <div className='header-right-sec'>
-          <div className='nav-link'>
+          <div className={lightTheme ? "nav-link-light" :"nav-link-dark" }>
               <Link to="/myscoreboard"><span>My Scoreboard</span></Link>
             <Link to="/leaderboard" ><span>Leaderboard</span></Link>
           </div>
         
           <ul className='img-tabs'>
-            <li><img className="theme-btn" src={light} alt="dark-light" /></li>
-            <li className='profile-tab'><img className='profle-icon' src={profile} alt="Profile" />
+            <li><img className="theme-btn" onClick={updateTheme} src={lightTheme ? dark : light} alt="dark-light" /></li>
+            <li className='profile-tab'><img className='profle-icon' src={lightTheme ? profileDark : profileLight} alt="Profile" />
               <div className='profile-content'>
-                <NavScreens />
+                <NavScreens theme={lightTheme} />
                 <button className='btn-logout' onClick={loggedOut} >Sign out of Attandance</button>
               </div>
             </li>
@@ -98,17 +86,17 @@ export default function Header() {
       </div>
     </div>
     <div className='mobile-header'>
-        <div class="topnav" id="myTopnav">
-          <Link to="/dashboard"><img src={moblogo} alt="mob-logo" /></Link>
-          <Link class="active" to="/dashboard"><span>Home</span></Link>
-          <Link to="/myscoreboard"><span>My Scoreboard</span></Link>
-          <Link to="/leaderboard" ><span>Leaderboard</span></Link>
-          <Link to="/screens" ><span>Switch Website</span></Link>
-          <Link className='btn-logout' onClick={loggedOut} >Sign out of Attandance</Link>
-          <Link class="icon" >
-            <img className="theme-btn" src={light} alt="dark-light" />
-            <img src={menu} onClick={openNavBar} className="menu-bar" alt="menu-bar" />
-          </Link>
+        <img className="theme-btn" onClick={updateTheme} src={lightTheme ? dark : light} alt="dark-light" />
+        <div class={lightTheme ? "topnav dark-topnav" : "topnav light-topnav" } id="myTopnav">
+            <Link to="/dashboard"><img src={lightTheme?logoLight:logoDark} alt="mob-logo" className="mob-logo" /></Link>
+            <Link onClick={closePopus} class="active" to="/dashboard"><span>Home</span></Link>
+            <Link onClick={closePopus} to="/myscoreboard"><span>My Scoreboard</span></Link>
+            <Link onClick={closePopus} to="/leaderboard" ><span>Leaderboard</span></Link>
+            <Link onClick={closePopus} to="/screens" ><span>Switch Website</span></Link>
+            <Link  className='btn-logout' onClick={loggedOut} >Sign out of Attandance</Link>
+            <Link class="icon" >
+              <img src={lightTheme ? menudark :menulight} onClick={openNavBar} className="menu-bar" alt="menu-bar" />
+            </Link>
         </div>
     </div>
     </>

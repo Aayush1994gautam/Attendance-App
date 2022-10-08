@@ -20,9 +20,9 @@ export default function CurrentLiveEvent() {
     useEffect(()=>{
         let headers = {
             'Content-Type': 'application/json',
-            //"token": localStorage.getItem('token')
+            "token": localStorage.getItem('token')
         };
-        axios.get('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/events/current?id=633556e9642fcd7ba62fd2a0', { headers })
+        axios.get('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/events/current?id=633557381115f84417a97e53', { headers })
         .then(response => setEvent(response.data)
         .catch(error => console.log(error))
         ); },[]);
@@ -32,10 +32,16 @@ export default function CurrentLiveEvent() {
             'Content-Type': 'application/json',
             "token":localStorage.getItem('token'),
             }
-       const data = JSON.stringify({"event_id":"6334823f3c9429a8c7f0ba8c"});
+       const data = JSON.stringify({"event_id":"6334827b3c9429a8c7f0ba8e"});
        try{
-            const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/mark-attendance', data,{
-            headers : headers
+            const response = await fetch('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/mark-attendance', 
+               {
+                    method:"POST",
+                    body:JSON.stringify({"event_id":"6334827b3c9429a8c7f0ba8e"}),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                        "token":localStorage.getItem('token'),
+                    }
             })
             let msg = "Great! your attendance has been marked.";
             setErrorMsg(msg);
