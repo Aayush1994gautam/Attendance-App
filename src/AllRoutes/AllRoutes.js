@@ -10,6 +10,7 @@ import Screens from '../Pages/Screens/Screens';
 import MyScoreBoard from '../Pages/MyScoreBoard/MyScoreBoard';
 import LeaderBoard from '../Pages/LeaderBoard/LeaderBoard';
 import ProtectedRoutes from './ProtectedRoutes';
+import PageNotFound from './../Components/PageNotFound'
 import Header from '../Components/Header/Header';
 const isAuthenticated = true;
 
@@ -26,6 +27,7 @@ export default function AllRoutes() {
         <Route path="/dashboard" element={<ProtectedRoutes Component={Dashboard} />} />
         <Route path="/myscoreboard" element={<ProtectedRoutes Component={MyScoreBoard} />} />
         <Route path="/leaderboard" element={<ProtectedRoutes Component={LeaderBoard} />} /> 
+        <Route path="*" element={<PageNotFound />} />
       </Routes> 
     </BrowserRouter>
       
