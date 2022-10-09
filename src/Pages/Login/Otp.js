@@ -46,7 +46,7 @@ export default function Otp() {
     
   }
   const sendAgainOtp = async () =>{
-    
+   
     const data = JSON.stringify({"phone": location.state.mobile});
     const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/signup', data,{
       headers : headers
@@ -72,7 +72,7 @@ export default function Otp() {
         <div className="login-wrapper-content-right">
           <img src={logo} alt="logo" />
           <p className='otp-heading'>Verify Your Account</p>
-          <h3 className='otp-content'>We have sent a 4 digit verification code to <br />+ {location.state.mobile = " " ? location.state.mobile : "0000000000"}</h3>
+          <h3 className='otp-content'>We have sent a 4 digit verification code to <br />+ {location.state ? location.state.mobile : "0000000000"}</h3>
           
            <div className='otp-input'>
                 <OTPInput value={OTP} onChange={setOTP} autoFocus OTPLength={4} otpType="number" disabled={false}  />

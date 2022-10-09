@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import './style.scss';
 import img from "../../Assets/Images/Saly-10.png";
 import logo from "../../Assets/Images/logo.png";
+import ind from "../../Assets/Images/Group-34.png";
+
 import { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
@@ -59,7 +61,7 @@ export default function Login(props) {
           <p className='right-side-content'>Login or register to your account <br />and get amazing <span>reward!!</span></p>
           <div className='login-inputs'>
             <select className='country-input'>
-              <option>IN</option>
+              <option><img src={ind} alt="india"/><span className='option-txt'>IN</span></option>
               <option>USA</option>
               <option>UK</option>
               <option>UAE</option>

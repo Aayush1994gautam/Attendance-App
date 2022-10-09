@@ -27,7 +27,7 @@
                 margin: 0;
 
                 .theme-btn{
-                    width: 30px;
+                   // width: 30px;
                     cursor: pointer;
                 }
             }
@@ -147,7 +147,7 @@
     display: none;
   }
   .menu-bar{
-      width: 50px;
+      height: 35px;
       padding-left: 10px;
   }
   @media screen and (max-width: 900px) {
@@ -157,12 +157,18 @@
       display: block;
     }
     .theme-btn{
-      width: 50px;
+      //width: 50px;
       position: absolute;
       top:15px;
-      right: 90px;
+      right: 70px;
       z-index: 999;
     }
+    .dashboard .dashboard-wrapper{
+      padding-top: 100px;
+    }
+    // .dashboard .dashboard-wrapper .live-sec .live-attandance .btn-attandance{
+    //   padding-bottom: 20px !important;
+    // }
   }
   
   @media screen and (max-width: 900px) {
@@ -178,10 +184,10 @@
       text-align: left;
     }
     .mob-logo{
-      width: 180px;
+      height: 35px;
     }
     .theme-btn{
-      width: 50px;
+      //width: 50px;
     }
   }
 @media (max-width:801px)  {
@@ -195,7 +201,7 @@
       display: block;
     }
     .theme-btn{
-      width: 50px;
+      height: 35px;
     }
 }
 // .light-topnav{
