@@ -90,7 +90,7 @@
         .attan-card{
 
             border: 1px solid #f2f2f0;
-            padding: 10px 20px;
+            padding: 0px 20px;
             display: flex;
             border-radius: 20px;
             justify-content: space-around;
@@ -119,6 +119,19 @@
                  -webkit-text-fill-color: transparent;  
                  padding-top: 0;
              }
+            }
+            .lact-attan{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 30px;
+
+                img{
+                    height: 30px;
+                    padding-right: 30px;
+                }
+                p{
+                    padding: 0;
+                }
             }
 
             .lact-details {
@@ -155,11 +168,13 @@
              width: 200px;
              margin: 0 auto;
 
-             .attended-img{
-                 width: 100px;
-                 padding-right: 10px;
-                 padding-top: 10px;
-             }
+            span{
+                font-weight: 700;
+                background: -webkit-linear-gradient(#FFA408, #FF06E5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+               // line-height: 1.2;
+            }
          }
      }
     }
@@ -218,9 +233,14 @@
     .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-details h5{
         font-size: 26px;
     }
-    .lact-attan{
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-attan{
+        display: block;
         text-align: center;
         padding-top: 15px;
+    }
+    .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .lact-attan img{
+        padding-right: 0;
+        padding-bottom: 15px;
     }
     .leaderboard .leaderboard-wrapper .leaderboard-sec .attan-card .attended-txt{
         padding-right: 0;

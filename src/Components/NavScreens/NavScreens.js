@@ -1,47 +1,13 @@
 import React from 'react';
 import Twitter from '../../Assets/Images/Group-1.png';
 import Swiggy from '../../Assets/Images/Group-2.png';
-import Instacart from '../../Assets/Images/Group-3.png';
+import Instacart from '../../Assets/Images/G-5.svg';
 import Adobe from '../../Assets/Images/Group-6.png';
 import Google from '../../Assets/Images/Group-5.png';
 import icon from '../../Assets/Images/icon-5.png'
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-
-
-const links = {
-    items: [
-      {
-        text: 'Home',
-        link: '/'
-      },
-      {
-        text: 'Doc',
-        link: '#docs'
-      },
-      {
-        text: 'Custom',
-        link: '#custom-bar'
-      },
-      {
-        text: 'Contact',
-        link: '#contact'
-      }
-    ],
-    logo: {
-      text: 'Responsive Navbar React'
-    },
-    style: {
-      barStyles: {
-        background: '#444'
-      },
-      sidebarStyles: {
-        background: '#222',
-        buttonColor: 'white'
-      }
-    }
-  }
 
 const screen = [
     {

@@ -22,7 +22,7 @@ const leadersboard = [
         "name": "Shuruti Thakur",
         "time": "750 mins  •  7 days streak",
         "brand": brand1,
-        "discount" :"50%"
+        "discount" :"40%"
     },
     {
         "rank" : '2',
@@ -30,7 +30,7 @@ const leadersboard = [
         "name": "Shuruti Thakur",
         "time": "750 mins  •  7 days streak",
         "brand": brand2,
-        "discount" :"50%"
+        "discount" :"80%"
     },
     {
         "rank" : '3',
@@ -46,7 +46,7 @@ const leadersboard = [
         "name": "Shuruti Thakur",
         "time": "750 mins  •  7 days streak",
         "brand": brand1,
-        "discount" :"50%"
+        "discount" :"60%"
     },
     {
         "rank" : '5',
@@ -95,7 +95,7 @@ export default function LeaderBoard() {
               </div>
               <div className='lact-attan'>
               <img className='attended-img' src={leaderboard.brand} alt="attendend" />
-              <p className='attended-txt'>Won free {leaderboard.discount} of Zomato coupon code!</p>
+              <p className='attended-txt'>Won free <span> {leaderboard.discount}</span> of Zomato coupon code!</p>
                 {/* <span>{leaderboard.attendance ? <p className='attended-txt'><img className='attended-img' src={attendend} alt="attendend" />Attended!</p> : <span>Not Attended!</span>}</span> */}
               </div>
             </div>
