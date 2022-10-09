@@ -34,14 +34,8 @@ export default function CurrentLiveEvent() {
             }
        const data = JSON.stringify({"event_id":"6334827b3c9429a8c7f0ba8e"});
        try{
-            const response = await fetch('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/mark-attendance', 
-               {
-                    method:"POST",
-                    body:JSON.stringify({"event_id":"6334827b3c9429a8c7f0ba8e"}),
-                    headers: {
-                        "Content-type": "application/json; charset=UTF-8",
-                        "token":localStorage.getItem('token'),
-                    }
+            const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/students/mark-attendance', data,{
+                headers: headers          
             })
             let msg = "Great! your attendance has been marked.";
             setErrorMsg(msg);
@@ -75,7 +69,7 @@ export default function CurrentLiveEvent() {
                             <img src={icon1} alt="icon" />Mark Attendance</button></>}
                 </div>
             </div>
-            {showPopup && <PopupModel msg={errorMsg} />}
+            {showPopup && <PopupModel errorFlag="false" msg="Server Error" />}
         </div>
     )
 }

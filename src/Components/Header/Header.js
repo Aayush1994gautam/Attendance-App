@@ -49,7 +49,6 @@ export default function Header() {
     x.style.removeProperty("background");
   }
   const openNavBar = () => {
-    debugger;
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav light-topnav" || x.className === "topnav dark-topnav"  ) {
       x.className += lightTheme ? " responsive light-res":" responsive dark-res";

@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.scss';
 import img from "../../Assets/Images/Saly-10.png";
 import logo from "../../Assets/Images/logo.png";
 import { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
+import PopupModel from '../../Components/PopupModel/PopupModel';
 
 
 export default function Register(props) {
-
+  const [showPopup, setshowpopup] = useState(false);
   const[userName, setuserName] = useState("");
   const[userDOB, setuserDOB] = useState("");
   const[userEmail, setuserEmail] = useState("");
@@ -28,28 +29,38 @@ export default function Register(props) {
     'token': localStorage.getItem('token'),
     "Content-Type": "application/json",
   }
+ 
 
   const checkValidation = async () => {
-    if(true){
-      const data = JSON.stringify({'email':"ayush@gmail.com", "dob" :"2022-09-22T00:00:00.000", });
-      const response = await fetch('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/student', data,{
-        headers : headers
-      })
-       localStorage.setItem("token",response.data.token);
-        localStorage.setItem('login', true);
-        if(response.data.student.email){
-          let path = "/screens";
-          navigate(path);
+    try{
+      if(true){
+        const data = JSON.stringify({'email':"ayush@gmail.com", "dob" :"2022-09-22T00:00:00.000", });
+        const response = await axios.post('https://mvv1mq7v9e.execute-api.ap-south-1.amazonaws.com/dev/api/student', data,{
+          headers : headers
+        })
+         localStorage.setItem("token",response.data.token);
+          localStorage.setItem('login', true);
+          if(response.data.student.email){
+            let path = "/screens";
+            navigate(path);
+          }else{
+            navigate("/register");
+          }
+           
         }else{
-          navigate("/register");
+          console.log("nothing")
         }
-         
-      }else{
-        console.log("nothing")
-      }
-
-    let path = "/screen";
-    navigate(path);
+  
+      let path = "/screens";
+      navigate(path);
+    }catch{
+      setshowpopup(true);
+      // let path = "/screen";
+      // navigate(path);
+      
+    
+    }
+    
   }
 
 
@@ -72,7 +83,7 @@ export default function Register(props) {
             <button className='register-submit' onClick={checkValidation}>Register</button>
         </div>
     </div>
-  
+    {showPopup && <PopupModel path="screens" errorFlag="false" msg="Server Error" />}
 </div>
 
   )
