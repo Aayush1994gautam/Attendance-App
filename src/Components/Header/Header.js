@@ -40,8 +40,8 @@ export default function Header() {
     localStorage.removeItem('screenName');
     localStorage.removeItem('token');
     closePopus();
-    navigate("/")
-    window.location.reload()
+    navigate('/')
+    //window.location.reload()
   }
   const closePopus = ()=>{
     var x = document.getElementById("myTopnav");
