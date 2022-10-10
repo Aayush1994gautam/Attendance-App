@@ -3,7 +3,7 @@ import './style.scss';
 import img from "../../Assets/Images/Saly-10.png";
 import logo from "../../Assets/Images/logo.png";
 import ind from "../../Assets/Images/Group-34.png";
-
+import optionArrow from '../../Assets/Images/Group-35.png'
 import { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
@@ -61,13 +61,19 @@ export default function Login(props) {
           <p className='right-side-content'>Login or register to your account <br />and get amazing <span>reward!!</span></p>
           <div className='login-inputs'>
             <select className='country-input'>
-              <option><img src={ind} alt="india"/><span className='option-txt'>IN</span></option>
+              {/* <option><img src={ind} alt="india"/><span className='option-txt'>IN</span></option>
               <option>USA</option>
               <option>UK</option>
-              <option>UAE</option>
+              <option>UAE</option> */}
+               <option value="In">🇮🇳&emsp;IN</option>
+                <option value="UAE">🇦🇪&emsp;UAE</option>
+                <option value="USA">🇺🇸&emsp;USA</option>
+                <option value="UK">🇬🇧&emsp;UK</option>
             </select>
+            <img className="optionArrow" src={optionArrow} alt="optionArrow" />
             <input type="number" placeholder="Mobile Number" onChange={updateNumber}></input>
           </div>
+        
           {/* <p className='links-cta'><Link to={"/register"}>Create an account</Link></p> */}
           <button className='login-submit' onClick={checkValidation}>Login</button>
         </div>

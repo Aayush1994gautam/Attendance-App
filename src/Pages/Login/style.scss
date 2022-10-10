@@ -23,8 +23,15 @@
             color: #fff;
             text-align: center;
             width: 50%;
+            
             img{
                 height: 50px;
+            }
+            .optionArrow{
+                height: 8px;
+                position: absolute;
+                top: 23px;
+                left: 45px;
             }
             .right-side-content{
                 font-size: 35px;
@@ -42,16 +49,22 @@
             }
             .login-inputs{
                 display: flex;
+                position: relative;
                 select{
                     background-color: #292B4c;
                     color: #fff;
                     font-size: 18px;
-                    padding: 10px 10px;
+                    width: 70px;
+                    padding: 10px 17px;
                     border-radius: 12px;
                     // margin: 20px 0px;
+                    //position: relative;
                     height: 55px;
                     outline: none;
                     border: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
 
                 }
                 input{
